@@ -13,6 +13,13 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/albums', (req, res) => {
+  const item = data.albums.find(p => p.id === req.query.id);
+  res.render('albums', {
+    item
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
